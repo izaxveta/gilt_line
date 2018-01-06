@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: gilt_line_production
-  username: gilt_line
-  password: <%= ENV['GILT_LINE_DATABASE_PASSWORD'] %>
