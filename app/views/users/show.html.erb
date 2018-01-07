@@ -1,0 +1,9 @@
+<%= @user.full_name %>
+<%= @user.display_birthday %>
+<%= @user.nationality %>
+<%= @user.occupation %>
+
+<h3>Favorite Brands</h3>
+<% @user.brands.each do |brand| %>
+  <%= brand.name %><br>
+<% end %>

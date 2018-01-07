@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
 
+  def show; end
+
   def create
     user = User.new(user_params)
     if user.save
@@ -31,6 +33,9 @@ class UsersController < ApplicationController
       @user = current_user
     end
 
+    def set_user_brands(data, user)
+      UserBrand.set_favorite_brands(data, user)
+    end
     def user_params
       params.require(:user).permit(:first_name,
                                    :last_name,
