@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+
   def create
     user = User.new(user_params)
     if user.save
@@ -23,6 +25,11 @@ class UsersController < ApplicationController
   end
 
   private
+    attr_reader :user
+
+    def set_user
+      @user = current_user
+    end
 
     def user_params
       params.require(:user).permit(:first_name,
