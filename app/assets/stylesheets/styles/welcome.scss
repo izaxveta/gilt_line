@@ -1,0 +1,107 @@
+body {
+  background-image     : asset_url('stil-243522.jpg');
+  background-position  : center;
+  background-size      : 130%;
+  background-position-y: 175px;
+  background-repeat    : no-repeat;
+  margin               : 0px;
+}
+
+nav {
+  background-color: black;
+  color           : white;
+  height          : 10%;
+  display         : flex;
+  align-items     : center;
+  justify-content : center;
+}
+
+#gilt {
+  font-family   : 'Playfair Display SC', serif;
+  font-size     : 120px;
+  letter-spacing: 3px;
+}
+
+#line {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style : italic;
+  font-size  : 100px;
+}
+
+.form-container {
+  margin-top      : 13%;
+  height          : 60%;
+  width           : 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color           : white;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  flex-direction  : column;
+}
+
+.register-form form {
+  display        : flex;
+  justify-content: space-between;
+  flex-direction : column;
+  align-items    : center;
+  height         : 55%;
+  padding-bottom : 30px;
+}
+
+  .data-field {
+    font-family     : 'Josefin Sans', sans-serif;
+    font-style      : italic;
+    color           : grey;
+    background-color: white;
+    border-radius   : 60px;
+    height          : 110px;
+    width           : 700px;
+    font-size       : 35px;
+    text-align      : center;
+    font-size       : 30px;
+    border-width    : 3px;
+    border-color    : grey;
+    border-style    : solid;
+  }
+
+.register-button {
+  font-family     : 'Josefin Sans', sans-serif;
+  color           : black;
+  background-color: white;
+  border          : none;
+  border-radius   : 50px;
+  height          : 100px;
+  width           : 400px;
+  font-size       : 35px;
+}
+
+.line-divider {
+  background-color: white;
+  height          : 3px;
+  width           : 85%;
+}
+
+.sign-in {
+  font-family   : 'Josefin Sans', sans-serif;
+  font-size     : 35px;
+  display       : flex;
+  display       : flex;
+  align-items   : center;
+  flex-direction: column;
+}
+
+.button {
+  color           : black;
+  background-color: white;
+  border          : none;
+  border-radius   : 50px;
+  height          : 100px;
+  width           : 400px;
+  font-size       : 35px;
+  display         : flex;
+  align-content   : center;
+  justify-content : center;
+  align-items     : center;
+  text-decoration : none;
+}
