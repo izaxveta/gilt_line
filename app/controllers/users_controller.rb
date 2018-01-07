@@ -11,6 +11,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit; end
+
+  def update
+    if user.update(user_params)
+      set_user_brands(params[:user][:brand_ids], user)
+      redirect_to profile_path(user)
+    else
+      render :edit
+    end
+  end
+
   private
 
     def user_params
