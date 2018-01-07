@@ -11,7 +11,9 @@
   <body>
     <% if current_user %>
       <div class='nav-menu'>
-        <%= link_to "SIGN OUT", logout_path, method: :delete %>
+        <%= link_to 'PROFILE', profile_path %>
+        <%= link_to 'DASHBOARD', dashboard_path %>
+        <%= link_to 'SIGN OUT', logout_path, method: :delete %>
       </div>
     <% end %>
     <% flash.each do |type, message| %>
