@@ -1,0 +1,14 @@
+<%= form_for @user do |f| %>
+  <%= f.label       :first_name %>
+  <%= f.text_field  :first_name, required: true %><br>
+  <%= f.label       :last_name %>
+  <%= f.text_field  :last_name, required: true %><br>
+  <%= f.label       :birthday %>
+  <%= f.date_select :birthday, start_year: 1950, required: true %><br>
+  <%= f.label       :nationality %>
+  <%= f.text_field  :nationality, required: true %><br>
+  <%= f.label       :occupation %>
+  <%= f.text_field  :occupation, required: true %><br>
+  <%= f.collection_check_boxes(:brand_ids, Brand.all, :id, :name)%><br>
+  <%= f.submit 'SUBMIT' %>
+<% end %>
