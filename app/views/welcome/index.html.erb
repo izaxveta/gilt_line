@@ -1,2 +1,9 @@
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
+<%= form_for @user do |f| %>
+  <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
+  <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
+  <%= f.text_field :email, placeholder: 'EMAIL' %>
+  <%= f.password_field :password, placeholder: 'PASSWORD' %>
+  <%= f.submit 'REGISTER' %>
+<% end %>
+
+<%= link_to 'SIGN IN', '/login' %>
