@@ -1,9 +1,17 @@
-<%= form_for @user do |f| %>
-  <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
-  <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
-  <%= f.text_field :email, placeholder: 'EMAIL' %>
-  <%= f.password_field :password, placeholder: 'PASSWORD' %>
-  <%= f.submit 'REGISTER' %>
-<% end %>
+<html>
+  <head>
 
-<%= link_to 'SIGN IN', '/login' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+    <%= form_for @user do |f| %>
+      <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
+      <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
+      <%= f.text_field :email, placeholder: 'EMAIL' %>
+      <%= f.password_field :password, placeholder: 'PASSWORD' %>
+      <%= f.submit 'REGISTER' %>
+    <% end %>
+
+    <%= link_to 'SIGN IN', '/login' %>
+  </body>
+</html>
