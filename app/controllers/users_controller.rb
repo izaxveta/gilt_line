@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def update
     if user.update(user_params)
       set_user_brands(params[:user][:brand_ids], user)
-      redirect_to profile_path(user)
+      redirect_to profile_path
     else
       render :edit
     end
