@@ -27,7 +27,7 @@ RSpec.feature 'As a registered user' do
 
     click_on 'SUBMIT'
 
-    expect(current_path).to eq(profile_path(user))
+    expect(current_path).to eq(profile_path)
     expect(page).to have_content('Dolce and Gabbana')
     expect(page).to have_content('VALENTINO')
     expect(page).not_to have_content('Balenciaga')
