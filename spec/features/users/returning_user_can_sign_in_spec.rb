@@ -15,7 +15,7 @@ RSpec.feature 'As a returning unauthenticated user' do
     fill_in 'session[email]', with: 'lourdes@mail.com'
     fill_in 'session[password]', with: 'password'
 
-    click_on 'GO'
+    click_on 'SIGN IN'
 
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content('Lourdes Laurentum')
