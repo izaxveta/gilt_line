@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   get '/profile', to: 'users#show', as: 'profile'
   get '/profile/edit', to: 'users#edit', as: 'edit_profile'
   resources :users, only: [:create, :update]
+  resources :search, only: [:index]
 end
