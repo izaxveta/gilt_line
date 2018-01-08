@@ -1,0 +1,12 @@
+<% @venues.each do |venue| %>
+  <div class='venue'>
+    <div class='name'><%= venue.name %></div>
+    <div class='categories'><%= venue.categories %></div>
+    <div class='price'><%= venue.price %></div>
+    <div class='rating'><%= venue.rating %></div>
+    <div class='review_count'><%= venue.review_count %></div>
+    <div class='phone'><%= venue.phone %></div>
+    <div class='location'><%= venue.location %></div>
+    <div class='venue-image'><%= image_tag venue.image_url %></div>
+  </div>
+<% end %>
