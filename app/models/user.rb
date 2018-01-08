@@ -14,6 +14,6 @@ class User < ApplicationRecord
   end
 
   def display_birthday
-    birthday.strftime('%B %-d, %Y')
+    birthday.strftime('%B %-d, %Y') if !birthday.nil?
   end
 end
