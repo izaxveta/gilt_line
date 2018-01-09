@@ -1,0 +1,1 @@
+      Faker::Zelda.character

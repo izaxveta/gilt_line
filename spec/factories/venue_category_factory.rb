@@ -1,0 +1,1 @@
+      Faker::Dessert.variety
