@@ -1,0 +1,7 @@
+<%= link_to '+ FASHION LABEL', new_label_path %>
+
+<% @labels.each do |label| %>
+  <div class='label'>
+    <%= label.name %>
+  </div>
+<% end %>

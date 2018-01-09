@@ -4,9 +4,9 @@ RSpec.feature 'As a registered user' do
   let(:user) { create(:user) }
 
   scenario 'I can click on a link to complete my profile' do
-    create(:brand, name: 'Balenciaga')
-    create(:brand, name: 'VALENTINO')
-    create(:brand, name: 'Dolce and Gabbana')
+    create(:label, name: 'Balenciaga')
+    create(:label, name: 'VALENTINO')
+    create(:label, name: 'Dolce and Gabbana')
 
     allow_any_instance_of(ApplicationController)
     .to receive(:current_user).and_return(user)
