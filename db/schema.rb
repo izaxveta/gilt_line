@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20180109175725) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "labels", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "user_brands", force: :cascade do |t|
+  create_table "user_labels", force: :cascade do |t|
     t.bigint "user_id"
-    t.bigint "brand_id"
-    t.index ["brand_id"], name: "index_user_brands_on_brand_id"
-    t.index ["user_id"], name: "index_user_brands_on_user_id"
+    t.bigint "label_id"
+    t.index ["label_id"], name: "index_user_labels_on_label_id"
+    t.index ["user_id"], name: "index_user_labels_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,6 +47,7 @@
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "user_brands", "brands"
-  add_foreign_key "user_brands", "users"
+
+  add_foreign_key "user_labels", "labels"
+  add_foreign_key "user_labels", "users"
 end

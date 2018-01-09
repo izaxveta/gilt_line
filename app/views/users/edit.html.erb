@@ -9,6 +9,6 @@
   <%= f.text_field  :nationality, required: true %><br>
   <%= f.label       :occupation %>
   <%= f.text_field  :occupation, required: true %><br>
-  <%= f.collection_check_boxes(:brand_ids, Brand.all, :id, :name)%><br>
+  <%= f.collection_check_boxes(:label_ids, Label.all, :id, :name)%><br>
   <%= f.submit 'SUBMIT' %>
 <% end %>

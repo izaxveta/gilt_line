@@ -6,8 +6,8 @@ class User < ApplicationRecord
   validates_uniqueness_of :email
   has_secure_password
 
-  has_many :user_brands
-  has_many :brands, through: :user_brands
+  has_many :user_labels
+  has_many :labels, through: :user_labels
 
   enum role: ['default', 'admin']
 

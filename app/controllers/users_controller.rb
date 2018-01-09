@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def update
     if user.update(user_params)
-      set_user_brands(params[:user][:brand_ids], user)
+      set_user_labels(params[:user][:label_ids], user)
       redirect_to profile_path
     else
       render :edit
@@ -33,8 +33,8 @@ class UsersController < ApplicationController
       @user = current_user
     end
 
-    def set_user_brands(data, user)
-      UserBrand.set_favorite_brands(data, user)
+    def set_user_labels(data, user)
+      UserLabel.set_favorite_labels(data, user)
     end
     def user_params
       params.require(:user).permit(:first_name,
