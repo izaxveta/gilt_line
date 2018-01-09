@@ -1,0 +1,9 @@
+<%= @venue_category.name %>
+
+<% @venue_category.labels.each do |label| %>
+  <div class='label'>
+    <%= label.name %>
+  </div>
+<% end %>
+
+<%= link_to 'EDIT', edit_venue_category_path(id: @venue_category.id) %>

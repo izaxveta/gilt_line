@@ -5,6 +5,6 @@
 
 <% @venue_categories.each do |venue_category| %>
   <div class='venue-category'>
-    <%= venue_category.name %>
+    <%= link_to venue_category.name, venue_category_path(id: venue_category.id) %>
   </div>
 <% end %>

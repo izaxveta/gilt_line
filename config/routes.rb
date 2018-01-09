@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/admin/venue-categories', to: 'admin/venue_categories#index', as: 'venue_categories'
   get '/admin/venue-categories/generator', to: 'admin/venue_categories#new', as: 'venue_category_generator'
   post '/admin/venue-categories', to: 'admin/venue_categories#create'
+  get '/admin/venue-categories/:id',       to: 'admin/venue_categories#show',  as: 'venue_category'
 
   get '/dashboard',      to: 'dashboard#index'
 
