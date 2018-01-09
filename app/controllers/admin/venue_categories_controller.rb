@@ -19,6 +19,7 @@ class Admin::VenueCategoriesController < Admin::BaseController
 
   def update
     if venue_category.update(venue_category_params)
+      VenueCategoryLabel.set_venue_category_labels(venue_category, params[:venue_category][:label_ids])
       flash[:success] = "#{venue_category.name} update successful"
       redirect_to venue_category_path(id: venue_category.id)
     else
