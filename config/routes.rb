@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'welcome#index'
 
+  get '/venue', to: 'venues#show', as: 'venue'
+
   get '/login',          to: 'sessions#new'
   post '/login',         to: 'sessions#create'
   delete '/login',       to: 'sessions#destroy', as: 'logout'
@@ -25,6 +27,6 @@ Rails.application.routes.draw do
   get '/profile',        to: 'users#show',       as: 'profile'
   get '/profile/edit',   to: 'users#edit',       as: 'edit_profile'
 
+  get '/search', to: 'search#index', as: 'search_index'
   resources :users, only: [:create, :update]
-  resources :search, only: [:index]
 end
