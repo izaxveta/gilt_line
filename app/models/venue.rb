@@ -20,7 +20,8 @@ class Venue
   end
 
   def get_categories(category_data)
-    category_data.map { |category| category[:title] }
+    return category_data.map { |category| category[:title] } if category_data.first.is_a?(Hash)
+    return category_data if category_data.is_a?(Array)
   end
 
   def self.search_venues(filter)
