@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   get 'admin/settings',  to: 'admin/dashboard#show', as: 'settings'
 
   get '/admin/fashion-brands', to: 'admin/fashion_brands#index', as: 'fashion_brands'
+  get '/admin/fashion-brands/new', to: 'admin/fashion_brands#new', as: 'new_fashion_brand'
+  post '/admin/fashion-brands', to: 'admin/fashion_brands#create'
+
   get '/profile',        to: 'users#show',       as: 'profile'
   get '/profile/edit',   to: 'users#edit',       as: 'edit_profile'
 
