@@ -1,0 +1,5 @@
+<%= form_for @venue_category do |f| %>
+  <%= f.text_field :name %>
+  <%= f.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
+  <%= f.submit 'UPDATE' %>
+<% end %>
