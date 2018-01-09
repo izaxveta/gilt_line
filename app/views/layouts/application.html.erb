@@ -14,8 +14,12 @@
         <%= link_to 'PROFILE', profile_path %>
         <%= link_to 'DASHBOARD', dashboard_path %>
         <%= link_to 'SIGN OUT', logout_path, method: :delete %>
+        <% if current_admin? %>
+          <%= link_to 'SETTINGS', settings_path %>
+        <% end %>
       </div>
     <% end %>
+
     <% flash.each do |type, message| %>
       <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
     <% end %>
