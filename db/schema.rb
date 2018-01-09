@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20180109024919) do
 
   create_table "fashion_brands", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "user_brands", force: :cascade do |t|
