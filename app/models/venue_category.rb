@@ -1,7 +1,11 @@
 class VenueCategory < ApplicationRecord
   validates :name, presence: true
 
+  def self.generate_venue_categories(categories_data)
     whitelisted_data = venue_categories_filter(categories_data).compact
+    whitelisted_data.map { |data| VenueCategory.first_or_create(name: data["title"]) }
+  end
+
   def self.venue_categories_filter(categories_data)
     categories_data.map do |category|
       restaurant_filter(category) if category["parents"].include?('restaurants')
