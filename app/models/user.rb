@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :user_brands
   has_many :brands, through: :user_brands
 
+  enum role: ['default', 'admin']
+
   def full_name
     "#{first_name} #{last_name}"
   end

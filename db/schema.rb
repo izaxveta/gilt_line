@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180107042124) do
+ActiveRecord::Schema.define(version: 20180108233543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20180107042124) do
     t.date "birthday"
     t.string "nationality"
     t.string "occupation"
+    t.integer "role", default: 0
   end
 
   add_foreign_key "user_brands", "brands"
