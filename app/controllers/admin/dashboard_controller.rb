@@ -5,4 +5,6 @@ class Admin::DashboardController < Admin::BaseController
     @user = current_user
   end
 
+  def show; end
+
 end
