@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/admin/fashion-brands/new', to: 'admin/fashion_brands#new', as: 'new_fashion_brand'
   post '/admin/fashion-brands', to: 'admin/fashion_brands#create'
 
+  get '/admin/venue-categories', to: 'admin/venue_categories#index', as: 'venue_categories'
+  get '/admin/venue-categories/generator', to: 'admin/venue_categories#new', as: 'venue_category_generator'
+  post '/admin/venue-categories', to: 'admin/venue_categories#create'
+
   get '/dashboard',      to: 'dashboard#index'
 
   get '/profile',        to: 'users#show',       as: 'profile'
