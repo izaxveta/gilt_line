@@ -8,14 +8,17 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admin/dashboard#index'
   get 'admin/settings',  to: 'admin/dashboard#show', as: 'settings'
 
-  get '/admin/fashion-brands', to: 'admin/fashion_brands#index', as: 'fashion_brands'
-  get '/admin/fashion-brands/new', to: 'admin/fashion_brands#new', as: 'new_fashion_brand'
-  post '/admin/fashion-brands', to: 'admin/fashion_brands#create'
+  get '/admin/labels',     to: 'admin/labels#index', as: 'labels'
+  get '/admin/labels/new', to: 'admin/labels#new',   as: 'new_label'
+  post '/admin/labels',    to: 'admin/labels#create'
+  patch '/admin/',    to: 'admin/labels#create'
 
-  get '/admin/venue-categories', to: 'admin/venue_categories#index', as: 'venue_categories'
-  get '/admin/venue-categories/generator', to: 'admin/venue_categories#new', as: 'venue_category_generator'
-  post '/admin/venue-categories', to: 'admin/venue_categories#create'
+  get '/admin/venue-categories',           to: 'admin/venue_categories#index', as: 'venue_categories'
+  get '/admin/venue-categories/generator', to: 'admin/venue_categories#new',   as: 'venue_category_generator'
   get '/admin/venue-categories/:id',       to: 'admin/venue_categories#show',  as: 'venue_category'
+  post '/admin/venue-categories',          to: 'admin/venue_categories#create'
+  get '/admin/venue-categories/:id/edit',       to: 'admin/venue_categories#edit', as: 'edit_venue_category'
+  patch '/admin/venue-categories/:id',       to: 'admin/venue_categories#update'
 
   get '/dashboard',      to: 'dashboard#index'
 
