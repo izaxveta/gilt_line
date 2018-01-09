@@ -3,4 +3,6 @@ class Admin::VenueCategoriesController < Admin::BaseController
     @venue_categories = VenueCategory.all
   end
 
+  def new; end
+
 end

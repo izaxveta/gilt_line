@@ -1,0 +1,7 @@
+
+<div class='venue-category-generator'>
+  <%= form_tag venue_categories_path, method: :post do %>
+    <%= text_area_tag :generator_form, 'VenueCategories' %>
+    <%= submit_tag 'GENERATE' %>
+  <% end %>
+</div>
