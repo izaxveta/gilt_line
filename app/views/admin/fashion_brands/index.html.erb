@@ -1,0 +1,7 @@
+<%= link_to '+ FASHION BRAND', new_fashion_brand_path %>
+
+<% @fashion_brands.each do |brand| %>
+  <div class='fashion-brand'>
+    <%= brand.name %>
+  </div>
+<% end %>
