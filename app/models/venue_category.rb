@@ -3,7 +3,7 @@ class VenueCategory < ApplicationRecord
 
   def self.generate_venue_categories(categories_data)
     whitelisted_data = venue_categories_filter(categories_data).compact
-    whitelisted_data.map { |data| VenueCategory.first_or_create(name: data["title"]) }
+    whitelisted_data.map { |data| VenueCategory.find_or_create_by(name: data["title"]) }
   end
 
   def self.venue_categories_filter(categories_data)
