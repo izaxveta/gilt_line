@@ -15,7 +15,7 @@ class Venue
     @rating       = data[:rating]
     @review_count = data[:review_count]
     @phone        = data[:phone]
-    @location     = data[:location][:display_address]
+    @location     = display_location(data[:location])
     @image_url    = data[:image_url]
   end
 
@@ -29,6 +29,11 @@ class Venue
   end
 
   private
+    def display_location(location)
+      return location[:display_address] if location.is_a?(Hash)
+      return location if location.is_a?(Array)
+    end
+
     def self.generate_venues(venues)
       venues.map { |venue| Venue.new(venue) }
     end
