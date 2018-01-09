@@ -47,7 +47,15 @@ ActiveRecord::Schema.define(version: 20180109175725) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "venue_category_labels", force: :cascade do |t|
+    t.bigint "label_id"
+    t.bigint "venue_category_id"
+    t.index ["label_id"], name: "index_venue_category_labels_on_label_id"
+    t.index ["venue_category_id"], name: "index_venue_category_labels_on_venue_category_id"
+  end
 
   add_foreign_key "user_labels", "labels"
   add_foreign_key "user_labels", "users"
+  add_foreign_key "venue_category_labels", "labels"
+  add_foreign_key "venue_category_labels", "venue_categories"
 end
