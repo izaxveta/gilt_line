@@ -1,10 +1,48 @@
  <div class='venue'>
   <div class='name'><%= @venue.name %></div>
-  <div class='categories'><%= @venue.categories %></div>
+  <div class='categories'>
+    <% @venue.categories.each do |category| %>
+      <div class='category'><%= category %></div>
+    <% end %>
+  </div>
   <div class='price'><%= @venue.price %></div>
   <div class='rating'><%= @venue.rating %></div>
   <div class='review_count'><%= @venue.review_count %></div>
   <div class='phone'><%= @venue.phone %></div>
-  <div class='location'><%= @venue.location %></div>
+  <div class='location'>
+    <% @venue.location.each do |line| %>
+      <%= line %>
+    <% end %>
+  </div>
   <div class='venue-image'><%= image_tag @venue.image_url %></div>
 </div>
+
+<%= link_to "APPAREL", venue_path({venue: @venue.as_json, apparel: true}) %>
+<%= link_to "SHOES", venue_path({venue: @venue.as_json, shoes: true}) %>
+<%= link_to "ACCESSORIES", venue_path({venue: @venue.as_json, accessories: true}) %>
+
+<% if !@items.nil? %>
+  <% @items.each do |item| %>
+    <div class='item-container'>
+      <% if item.limited_inventory? %>
+        <span class='notice'>Limited!</span>
+      <% end %>
+      <div class='image'>
+        <div class='item-image'><%= image_tag(item.image_urls.first, alt: "#{item.label}") %></div>
+        <div class='heart'></div>
+      </div>
+      <div class='item-info'>
+        <div class='style'>
+          <div class='label-name'><%= item.label %></div>
+          <div class='name'><%= item.name %></div>
+        </div>
+        <div class='price'>
+          <div class='msrp'><%= item.msrp_price %></div>
+          <div class='sale'><%= item.sale_price %></div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p>There are currently no matches for this venue, perhaps try again later.</p>
+<% end %>
