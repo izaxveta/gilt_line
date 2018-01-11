@@ -3,22 +3,33 @@
   <head>
     <title>GiltLine</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
 
   <body>
-    <% if current_user %>
-      <div class='nav-menu'>
-        <%= link_to 'PROFILE', profile_path %>
-        <%= link_to 'DASHBOARD', dashboard_path %>
-        <%= link_to 'SIGN OUT', logout_path, method: :delete %>
-        <% if current_admin? %>
-          <%= link_to 'SETTINGS', settings_path %>
-        <% end %>
+    <nav>
+      <div class='logo'>
+        <span id='gilt'>GILT</span><span id='line'>line</span>
       </div>
-    <% end %>
+      <div class='navigation-buttons'>
+        <% if current_user %>
+          <%= link_to 'PROFILE', profile_path %>
+          <%= link_to 'DASHBOARD', dashboard_path %>
+          <% if current_admin? %>
+            <%= link_to 'SETTINGS', settings_path %>
+          <% end %>
+          <%= link_to 'SIGN OUT', logout_path, method: :delete %>
+          <div class='search-bar'>
+            <%= form_tag search_index_path, method: :get do %>
+              <%= text_field_tag :q, 'Search', class: 'search-field' %>
+              <%= submit_tag 'GO', class: 'search-button' %>
+            <% end %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </nav>
 
     <% flash.each do |type, message| %>
       <%= content_tag :div, message.html_safe, class: "alert alert-#{type}" %>
@@ -27,14 +38,6 @@
     <%= yield %>
 
     <footer>
-      <% if current_user %>
-        <div class='search-bar'>
-          <%= form_tag search_index_path, method: :get do %>
-            <%= text_field_tag :q, 'Search' %>
-            <%= submit_tag 'GO' %>
-          <% end %>
-        </div>
-      <%end%>
     </footer>
   </body>
 </html>
