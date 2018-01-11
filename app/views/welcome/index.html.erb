@@ -1,17 +1,28 @@
 <html>
   <head>
-
-    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/welcome.scss" title="text/scss" />
   </head>
   <body>
-    <%= form_for @user do |f| %>
-      <%= f.text_field :first_name, placeholder: 'FIRST NAME' %>
-      <%= f.text_field :last_name, placeholder: 'LAST NAME' %>
-      <%= f.text_field :email, placeholder: 'EMAIL' %>
-      <%= f.password_field :password, placeholder: 'PASSWORD' %>
-      <%= f.submit 'REGISTER' %>
-    <% end %>
-
-    <%= link_to 'SIGN IN', '/login' %>
+    <div class='container'>
+      <div class='form-container'>
+        <div class='register-form'>
+          <%= form_for @user do |f| %>
+            <%= f.text_field :first_name, placeholder: 'FIRST NAME', class: 'data-field' %>
+            <%= f.text_field :last_name, placeholder: 'LAST NAME', class: 'data-field' %>
+            <%= f.text_field :email, placeholder: 'EMAIL', class: 'data-field' %>
+            <%= f.password_field :password, placeholder: 'PASSWORD', class: 'data-field' %>
+            <%= f.submit 'REGISTER', class: 'register-button' %>
+          <% end %>
+        </div>
+        <div class='line-divider'></div>
+        <div class='sign-in'>
+          <p>Have an account? Sign in using the link below.</p>
+          <%= link_to 'SIGN IN', '/login', class: 'signin-button' %>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
   </body>
 </html>
