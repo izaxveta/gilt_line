@@ -1,5 +1,23 @@
-<%= form_for(:session, url: login_path) do |f| %>
-<%= f.text_field :email %>
-<%= f.password_field :password %>
-<%= f.submit 'SIGN IN' %>
-<% end %>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/welcome.scss" title="text/scss" />
+  </head>
+  <body>
+    <div class='container'>
+      <div class='form-container'>
+        <div class='signin-form'>
+        <p>Returning users, please sign in using the form below.</p>
+          <%= form_for(:session, url: login_path) do |f| %>
+          <%= f.text_field :email, placeholder: 'EMAIL', class: 'data-field' %>
+          <%= f.password_field :password, placeholder: 'PASSWORD', class: 'data-field' %>
+        <div class='line-divider', width: '567px'></div>
+          <%= f.submit 'SIGN IN', class: 'register-button' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
