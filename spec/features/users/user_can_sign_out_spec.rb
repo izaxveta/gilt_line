@@ -10,9 +10,7 @@ RSpec.feature 'As an authenticated user' do
     expect(current_path).to eq(dashboard_path)
     expect(page).to have_content (user.first_name)
 
-    within('.nav-menu') do
-      click_on "SIGN OUT"
-    end
+    click_on "SIGN OUT"
 
     expect(current_path).to eq(root_path)
   end
