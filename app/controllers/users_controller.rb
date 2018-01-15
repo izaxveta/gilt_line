@@ -36,6 +36,7 @@ class UsersController < ApplicationController
     def set_user_labels(data, user)
       UserLabel.set_favorite_labels(data, user)
     end
+
     def user_params
       params.require(:user).permit(:first_name,
                                    :last_name,
