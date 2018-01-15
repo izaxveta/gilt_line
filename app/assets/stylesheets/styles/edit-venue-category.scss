@@ -1,0 +1,53 @@
+.edit-venue-category form {
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 40px;
+}
+
+.edit-venue-category-name input {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  padding-left: 10px;
+  display: flex;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  height: 30px;
+  color: goldenrod;
+  width: 250px;
+}
+
+.venue-category-label-checkboxes {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.update-button input {
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-size: 15px;
+  padding-left: 10px;
+  display: flex;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  height: 30px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+}
+
+.update-button input:hover {
+  background-color: black;
+  color: white;
+}
+
+.update-button input:active {
+  background-color: goldenrod;
+  color: white;
+  border-color: white;
+}

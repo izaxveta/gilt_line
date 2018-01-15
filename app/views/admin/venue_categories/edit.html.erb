@@ -1,5 +1,13 @@
-<%= form_for @venue_category do |f| %>
-  <%= f.text_field :name %>
-  <%= f.collection_check_boxes(:label_ids, Label.all, :id, :name) %>
-  <%= f.submit 'UPDATE' %>
-<% end %>
+<div class='edit-venue-category'>
+  <%= form_for @venue_category do |f| %>
+    <div class='edit-venue-category-name'><%= f.text_field :name %></div>
+    <div class='venue-category-label-checkboxes'>
+      <%= f.collection_check_boxes(:label_ids, Label.all, :id, :name) do |b| %>
+        <%= b.label class:"label-checkbox" do %>
+          <%= b.check_box + b.text %>
+        <% end %>
+      <% end %>
+    </div>
+    <div class='update-button'><%= f.submit 'UPDATE' %></div>
+  <% end %>
+</div>
