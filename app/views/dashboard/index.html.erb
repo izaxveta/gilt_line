@@ -1,7 +1,62 @@
-<h3>Welcome,</h3>
-<%= @user.first_name %> <%= @user.last_name %>
-<%= @user.email %>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display:400" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/dashboard.scss" title="text/scss" />
+  </head>
+  <body>
 
-<% if @user.labels.empty? %>
-  <%= link_to "COMPLETE PROFILE", edit_profile_path(current_user) %>
-<% end %>
+    <div class='user-profile'>
+      <div class='user-image' id='main'>
+        IMAGE GOES HERE
+      </div>
+      <div class='user-info'>
+        <div class='data'>
+          <span>Welcome,</span>
+          <span><%= @user.first_name %> <%= @user.last_name %></span>
+          <span><%= @user.email %></span>
+        </div>
+        <div class='dashboard-button' id='edit'>
+          <%= link_to 'EDIT PROFILE', edit_profile_path(current_user) %>
+          <% if @user.labels.empty? %>
+            <%= link_to "COMPLETE PROFILE", edit_profile_path(current_user) %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class='notice'>
+      <% if @user.labels.empty? %>
+        <p>Complete your profile to receive more personalized results.</p>
+      <% end %>
+    </div>
+    <div class='option-bar'>
+      <div class='option-line-divider'></div>
+
+      <div class='dashboard-button' id='dashboard-options'>
+        <a href="/favorites.html" class='option'>5 4   F A V O R I T E S</a>
+        <a href="/saved-venues.html" class='option'>7  S A V E D  V E N U E S</a>
+      </div>
+    </div>
+
+    <div class='list'>
+      <div class='favorite-container'>
+        <div class='item'>
+          <a href="/favorite.html">
+            <div class='item-images'>
+              <a href="/remove-favorite.html" class='favorite-heart'>
+                <img src="./images/facebook-blank-heart-png-9.png" alt="heart">
+              </a>
+              <img src="./images/220x294-1.jpg" alt="favorited-item">
+            </div>
+          </a>
+          <div class='item-info'>
+            <div class='style'>
+              <span>Dolce & Gabbana</span>
+              <span class='description'>Floral Printed Dress</span>
+            </div>
+            <span class='price'>$1,759-$1,950</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
