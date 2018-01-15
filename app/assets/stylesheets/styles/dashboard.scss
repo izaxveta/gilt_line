@@ -38,7 +38,6 @@
     height     : auto;
     width      : 300px;
     margin: 0 auto;
-
   }
 
   .user-info {
@@ -82,6 +81,7 @@
     border-radius  : 50px;
     border-width   : 1px;
     border-style   : solid;
+    background-color: white;
   }
 
   #edit a {
@@ -202,10 +202,4 @@
 
   .description {
     font-size: 30px;
-  }
-  .price {
-    display    : flex;
-    align-items: right;
-    color      : goldenrod;
-    font-style : italic;
   }
