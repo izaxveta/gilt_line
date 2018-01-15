@@ -1,0 +1,69 @@
+.search-listings {
+  padding-bottom: 30px;
+}
+
+.search-listings a {
+  text-decoration: none;
+  color          : black;
+}
+
+.venue-container {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.venue-listing {
+  border         : 1px;
+  border-color   : black;
+  border-style   : solid;
+  padding        : 10px;
+  display        : flex;
+  width          : 900px;
+  text-decoration: none;
+  color          : black;
+  padding-left   : 30px;
+}
+
+.listing-venue-image {
+  width        : 125px;
+  height       : 125px;
+  position     : relative;
+  overflow     : hidden;
+  border-radius: 50%;
+}
+
+.listing-venue-image img {
+  height    : auto;
+  min-height: 125px;
+  width     : 125px;
+  margin    : 0 auto;
+}
+
+.venue-listing-info {
+  width          : 80%;
+  display        : flex;
+  flex-direction : row;
+  justify-content: space-between;
+  font-size      : 25px;
+  text-decoration: none;
+  color          : black;
+}
+
+.grouped-info-a {
+  display        : flex;
+  justify-content: space-between;
+  flex-direction : column;
+  padding        : 20px;
+}
+
+.grouped-info-b {
+    display        : flex;
+    flex-direction : column;
+    text-align     : right;
+    justify-content: space-between;
+    padding        : 20px;
+
+  .popularity {
+    display       : flex;
+    flex-direction: row;
+  }
+}
