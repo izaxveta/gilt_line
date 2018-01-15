@@ -1,7 +1,18 @@
-<%= link_to '+ FASHION LABEL', new_label_path %>
+ <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display:400" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/search.scss" title="text/scss" />
+  </head>
+  <body>
 
-<% @labels.each do |label| %>
-  <div class='label'>
-    <%= label.name %>
-  </div>
-<% end %>
+    <div class='new-label-link'><%= link_to '+ FASHION LABEL', new_label_path %></div>
+
+    <div class='label-index'>
+    <% @labels.each do |label| %>
+      <div class='label'>
+        <div class='favorite-label'><%= label.name %></div>
+      </div>
+    <% end %>
+    </div>
+  </body>
+</html>
