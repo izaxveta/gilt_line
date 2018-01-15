@@ -1,0 +1,34 @@
+.category-generator-link {
+  font-family: 'Playfair Display', serif;
+  padding: 40px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.category-generator-link a {
+  text-decoration: none;
+  color: goldenrod
+}
+
+.venue-category-index {
+  font-family: 'Josefin Sans', sans-serif;
+  padding-left: 40px;
+  font-size: 20px;
+  padding-bottom: 40px;
+}
+
+.venue-category-index a {
+  text-decoration: none;
+  color: black;
+}
+
+.no-labels-notice {
+  color: goldenrod;
+  font-style: italic;
+  font-size: 15px;
+}
+
+.venue-category {
+  display: flex;
+  align-items: center;
+}

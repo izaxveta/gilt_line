@@ -1,10 +1,16 @@
 <% if @venue_categories.empty? %>
   <h3>There are currently no Venue Categories. Use the Venue Category Generator to update the system.</h3>
 <% end %>
-<%= link_to 'VENUE CATEGORY GENERATOR', venue_category_generator_path %>
+<div class='category-generator-link'><%= link_to 'VENUE CATEGORY GENERATOR', venue_category_generator_path %></div>
 
-<% @venue_categories.each do |venue_category| %>
-  <div class='venue-category'>
-    <%= link_to venue_category.name, venue_category_path(id: venue_category.id) %>
-  </div>
-<% end %>
+
+<div class='venue-category-index'>
+  <% @venue_categories.each do |venue_category| %>
+    <div class='venue-category'>
+      <%= link_to venue_category.name, venue_category_path(id: venue_category.id) %>
+      <% if venue_category.labels.empty? %>
+        <div class='no-labels-notice'>* Venue Category has no associated labels. Click to update this Venue Category and add labels.</div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
