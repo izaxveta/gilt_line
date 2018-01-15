@@ -1,5 +1,6 @@
-<%= form_for @label do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit 'CREATE' %>
-<% end %>
+<div class='new-label'>
+  <%= form_for @label do |f| %>
+    <div class='new-label-name'><%= f.text_field :name, placeholder: "New Label Name" %></div>
+    <div class='new-label-submit'><%= f.submit 'CREATE' %></div>
+  <% end %>
+</div>

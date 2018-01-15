@@ -1,0 +1,45 @@
+.new-label {
+  font-size: 15px;
+  padding: 40px;
+  display: flex;
+}
+
+.new-label-name input {
+  font-family: 'Josefin Sans', sans-serif;
+  color: goldenrod;
+  width: 200px;
+  height: 23px;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  font-size: 20px;
+  padding-left: 10px;
+  padding-top: 7px;
+}
+
+.new-label-submit input {
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-size: 15px;
+  padding-left: 10px;
+  display: flex;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  height: 30px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+}
+
+.new-label-submit {
+  padding-top: 10px;
+}
+
+.new-label-submit input:hover {
+  background-color: black;
+  color: white;
+}
