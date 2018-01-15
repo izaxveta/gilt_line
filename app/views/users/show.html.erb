@@ -1,9 +1,19 @@
-<%= @user.full_name %>
-<%= @user.display_birthday %>
-<%= @user.nationality %>
-<%= @user.occupation %>
+ <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display:400" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/search.scss" title="text/scss" />
+  </head>
+  <body>
+    <div class='users-profile'>
+      <div class='profile-name'>Name: <%= @user.full_name %></div>
+      <div class='profile-birthday'>Birthday: <%= @user.display_birthday %></div>
+      <div class='profile-nationality'>Background: <%= @user.nationality %></div>
+      <div class='profile-occupation'>Profession: <%= @user.occupation %></div>
 
-<h3>Favorite Labels</h3>
-<% @user.labels.each do |label| %>
-  <%= label.name %><br>
-<% end %>
+      <h3>Favorite Labels</h3>
+      <% @user.labels.each do |label| %>
+        <div class='favorite-label'><%= label.name %></div>
+      <% end %>
+    </div>
+  </body>
+</html>
