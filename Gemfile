@@ -25,6 +25,7 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'figaro'
 gem 'faraday'
+gem "paperclip", "~> 5.0.0"
 
 group :development, :test do
   gem 'rspec-rails'
