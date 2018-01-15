@@ -13,16 +13,11 @@
     height: 45%;
   }
 
-  .user-image img {
-    border-radius: 50%;
-    height       : 120px;
-    width        : 120px;
-  }
-
-  .user-image img {
-    border-radius: 50%;
-    height       : 120px;
-    width        : 120px;
+  .profile-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
   }
 
   .user-profile {
@@ -31,16 +26,25 @@
     margin-top : 20px;
   }
 
+  #main {
+    width: 290px;
+    height: 290px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+  }
+
   #main img {
-    height     : 320px;
-    width      : 320px;
-    margin-left: 60px;
+    height     : auto;
+    width      : 300px;
+    margin: 0 auto;
+
   }
 
   .user-info {
     font-family: 'Playfair Display', serif;
     color      : black;
-    margin-left: 60px;
+    margin-left: 90px;
   }
 
   .data {
@@ -100,7 +104,7 @@
     font-size      : 20px;
     display        : flex;
     justify-content: center;
-
+    padding-top: 20px;
   }
 
   .option-bar {
