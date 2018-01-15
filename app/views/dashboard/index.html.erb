@@ -4,22 +4,25 @@
     <link rel="stylesheet" href="stylesheets/styles/dashboard.scss" title="text/scss" />
   </head>
   <body>
-
-    <div class='user-profile'>
-      <div class='user-image' id='main'>
-        IMAGE GOES HERE
-      </div>
-      <div class='user-info'>
-        <div class='data'>
-          <span>Welcome,</span>
-          <span><%= @user.first_name %> <%= @user.last_name %></span>
-          <span><%= @user.email %></span>
-        </div>
-        <div class='dashboard-button' id='edit'>
-          <%= link_to 'EDIT PROFILE', edit_profile_path(current_user) %>
-          <% if @user.labels.empty? %>
-            <%= link_to "COMPLETE PROFILE", edit_profile_path(current_user) %>
+    <div class='profile-container'>
+      <div class='user-profile'>
+        <div class='user-image' id='main'>
+          <% if @user.avatar.exists? %>
+            <%= image_tag @user.avatar.url, class: 'main-image' %>
           <% end %>
+        </div>
+        <div class='user-info'>
+          <div class='data'>
+            <span>Welcome,</span>
+            <span><%= @user.first_name %> <%= @user.last_name %></span>
+            <span><%= @user.email %></span>
+          </div>
+          <div class='dashboard-button' id='edit'>
+            <%= link_to 'EDIT PROFILE', edit_profile_path(current_user) %>
+            <% if @user.labels.empty? %>
+              <%= link_to "COMPLETE PROFILE", edit_profile_path(current_user) %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
