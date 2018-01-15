@@ -1,5 +1,5 @@
 body {
-  background-image     : asset_url('welcome-background.jpg');
+  // background-image     : asset_url('welcome-background.jpg');
   background-position  : center;
   background-size      : 130%;
   background-repeat    : no-repeat;
@@ -37,6 +37,10 @@ nav {
 
 .navigation-buttons {
   display: flex;
+  width: 90%;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 5px;
 }
 
 .container {
@@ -157,17 +161,17 @@ nav {
   font-family     : 'Josefin Sans', sans-serif;
   font-style      : italic;
   font-size       : 12px;
-  padding-top     : 8px;
+  padding-top     : 5px;
   color           : white;
   background-color: black;
   border-color    : white;
   border-radius   : 60px;
   border-width    : 1px;
-  height          : 30px;
-  width           : 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height          : 28px;
+  width           : 28px;
+  display         : flex;
+  justify-content : center;
+  margin-left     : 8px;
 }
 
 .search-field {
@@ -183,15 +187,21 @@ nav {
   border-color    : grey;
   border-style    : solid;
   resize          : horizontal;
-  padding-left: 10px;
-  padding-right: 40px;
-  font-size: 15px;
-  text-align: left;
+  padding-left    : 10px;
+  padding-top     : 4px;
+  font-size       : 15px;
+  text-align      : left;
 }
 
-.search-bar form {
+.search-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 150px;
+  width: 200px;
+}
+
+.search-bar form {
+  width: 200px;
+  display: flex;
+
 }
