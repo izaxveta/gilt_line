@@ -1,0 +1,207 @@
+
+
+  body {
+    background-color: white;
+    background-position  : center;
+    background-size      : 130%;
+    background-position-y: 175px;
+    background-repeat    : no-repeat;
+    margin               : 0px;
+  }
+
+  .menu-icon img {
+    height: 45%;
+  }
+
+  .user-image img {
+    border-radius: 50%;
+    height       : 120px;
+    width        : 120px;
+  }
+
+  .user-image img {
+    border-radius: 50%;
+    height       : 120px;
+    width        : 120px;
+  }
+
+  .user-profile {
+    display    : flex;
+    align-items: center;
+    margin-top : 20px;
+  }
+
+  #main img {
+    height     : 320px;
+    width      : 320px;
+    margin-left: 60px;
+  }
+
+  .user-info {
+    font-family: 'Playfair Display', serif;
+    color      : black;
+    margin-left: 60px;
+  }
+
+  .data {
+    height         : 120px;
+    display        : flex;
+    align-items    : left;
+    justify-content: space-between;
+    flex-direction : column;
+  }
+
+  .data span:nth-child(1) { font-size: 20px; letter-spacing: 1px; }
+  .data span:nth-child(2) { font-size: 35px; letter-spacing: 2px; }
+  .data span:nth-child(3) { font-size: 20px; letter-spacing: 1px; }
+
+  .dashboard-button {
+    display        : flex;
+    align-items    : left;
+    justify-content: space-around;
+    flex-direction : column;
+    margin-top     : 30px;
+  }
+
+  .dashboard-button a {
+    font-family    : 'Josefin Sans', sans-serif;
+    font-size      : 15px;
+    padding-top    : 4px;
+    color          : black;
+    height         : 30px;
+    text-decoration: none;
+    display        : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items    : center;
+    border-color   : black;
+    border-radius  : 50px;
+    border-width   : 1px;
+    border-style   : solid;
+  }
+
+  #edit a {
+    width: 200px;
+  }
+
+  #edit {
+    align-items: left;
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  .edit:active {
+    background-color: black;
+    color           : white;
+  }
+
+  .notice {
+    font-family    : 'Josefin Sans', sans-serif;
+    font-size      : 20px;
+    display        : flex;
+    justify-content: center;
+
+  }
+
+  .option-bar {
+    height         : 75px;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+  }
+
+  #dashboard-options {
+    flex-direction : row;
+    margin-top     : 0;
+    align-items    : center;
+    justify-content: space-around;
+    position       : absolute;
+    width          : 80%;
+    z-index        : -1;
+  }
+
+  #dashboard-options a {
+    width: 250px;
+    // background-color: white;
+    z-index         : 1;
+  }
+
+  .option-line-divider {
+    background-color: black;
+    height          : 1px;
+    width           : 100%;
+    z-index: -1
+  }
+
+  .option {
+    background-color: white;
+  }
+
+  .option:hover {
+    background-color: black;
+    color           : white;
+  }
+
+  .list {
+    margin-top   : 50px;
+    margin-bottom: 250px;
+  }
+
+  .favorite-container {
+    border-color   : black;
+    border-width   : 1px;
+    border-style   : solid;
+    margin         : 20px;
+    margin-left    : 50px;
+    margin-right   : 50px;
+    align-items    : center;
+    display        : flex;
+    justify-content: center;
+
+  }
+
+  .item {
+    font-family    : 'Playfair Display', serif;
+    font-size      : 40px;
+    display        : flex;
+    justify-content: space-between;
+    flex-direction : column;
+    margin         : 50px;
+  }
+
+  .item-images a {
+    float: right;
+    position: absolute;
+  }
+
+  .item img {
+    width     : 770px;
+    height    : auto;
+  }
+
+  .favorite-heart img {
+    height: 75px;
+    width: auto;
+  }
+
+  .item-info {
+    display        : flex;
+    align-items    : left;
+    justify-content: space-between;
+  }
+
+  .style {
+    display       : flex;
+    align-items   : left;
+    flex-direction: column;
+  }
+
+  .description {
+    font-size: 30px;
+  }
+  .price {
+    display    : flex;
+    align-items: right;
+    color      : goldenrod;
+    font-style : italic;
+  }
