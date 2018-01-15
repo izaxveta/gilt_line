@@ -23,7 +23,7 @@ RSpec.feature 'As an authenticated user' do
           fill_in 'q', with: '32839'
           click_on 'GO'
 
-          first('.venue > a').click
+          first('.venue-container > a').click
 
           expect(current_path).to eq(venue_path)
           expect(page).to have_link('APPAREL')

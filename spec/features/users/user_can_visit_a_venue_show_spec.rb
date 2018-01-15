@@ -14,16 +14,16 @@ RSpec.feature 'As an authenticated user' do
           click_on 'GO'
         end
 
-        first('.venue > a').click
+        first('.venue-container > a').click
 
         expect(current_path).to eq(venue_path)
-        expect(page).to have_css('.name')
-        expect(page).to have_css('.categories')
-        expect(page).to have_css('.price')
-        expect(page).to have_css('.rating')
-        expect(page).to have_css('.review_count')
-        expect(page).to have_css('.phone')
-        expect(page).to have_css('.location')
+        expect(page).to have_css('.venue-name')
+        expect(page).to have_css('.venue-categories')
+        expect(page).to have_css('.venue-price')
+        expect(page).to have_css('.venue-rating')
+        expect(page).to have_css('.venue-review_count')
+        expect(page).to have_css('.venue-phone')
+        expect(page).to have_css('.venue-location')
         expect(page).to have_css('.venue-image')
       end
     end

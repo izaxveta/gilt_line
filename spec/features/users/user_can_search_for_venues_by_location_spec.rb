@@ -17,7 +17,7 @@ RSpec.feature 'As an authenticated user' do
         end
 
         expect(current_path).to eq('/search')
-        expect(page).to have_css('.venue')
+        expect(page).to have_css('.venue-listing')
       end
     end
 
@@ -28,15 +28,15 @@ RSpec.feature 'As an authenticated user' do
           click_on 'GO'
         end
 
-        within(first('.venue')) do
-          expect(page).to have_css('.name')
-          expect(page).to have_css('.categories')
-          expect(page).to have_css('.price')
-          expect(page).to have_css('.rating')
-          expect(page).to have_css('.review_count')
-          expect(page).to have_css('.phone')
-          expect(page).to have_css('.location')
-          expect(page).to have_css('.venue-image')
+        within(first('.venue-listing')) do
+          expect(page).to have_css('.listing-name')
+          expect(page).to have_css('.listing-categories')
+          expect(page).to have_css('.listing-price')
+          expect(page).to have_css('.listing-rating')
+          expect(page).to have_css('.listing-review_count')
+          expect(page).to have_css('.listing-phone')
+          expect(page).to have_css('.listing-location')
+          expect(page).to have_css('.listing-venue-image')
         end
       end
     end
