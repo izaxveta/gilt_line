@@ -29,6 +29,14 @@ class Venue
     generate_venues(raw_venue_data)
   end
 
+  def display_categories
+    categories.join(', ')
+  end
+
+  def render_location
+    location.join(' ')
+  end
+
   private
     def display_location(location)
       return location[:display_address] if location.is_a?(Hash)
