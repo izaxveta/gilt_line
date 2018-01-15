@@ -1,8 +1,10 @@
 class Item
-  attr_reader :name,
+  attr_reader :data,
+              :name,
               :label,
               :description,
               :material,
+              :origin,
               :gilt_url,
               :image_urls,
               :inventory_status,
@@ -13,12 +15,13 @@ class Item
               :categories,
               :json_url
 
-
   def initialize(data)
+    @data             = data
     @name             = data[:name]
     @label            = data[:brand]
-    @description      = format_description(data[:content][:description])
-    @material         = data[:content][:material]
+    @description      = format_description
+    @material         = format_material
+    @origin           = format_origin
     @product_url      = data[:url]
     @image_urls       = filter_urls(data[:image_urls][:"420x560"])
     @inventory_status = data[:skus][0][:inventory_status].titleize
@@ -42,7 +45,15 @@ class Item
     images_data.map { |data| data[:url] }
   end
 
-  def format_description(item_description)
-    item_description.gsub("  ", "\n")
+  def format_description
+    data[:content][:description].gsub("  ", "\n") if data[:content][:description]
+  end
+
+  def format_material
+    data[:content][:material] if data[:content][:material]
+  end
+
+  def format_origin
+    data[:content][:origin] if data[:content][:origin]
   end
 end
