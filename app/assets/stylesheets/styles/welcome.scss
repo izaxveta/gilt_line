@@ -28,6 +28,17 @@ nav {
   font-size  : 40px;
 }
 
+
+.alert {
+  font-family: 'Playfair Display', serif;
+  color: goldenrod;
+  font-size: 15px;
+  font-style: italic;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+
 .navigation-buttons a {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
