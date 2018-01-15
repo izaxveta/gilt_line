@@ -43,6 +43,7 @@ class UsersController < ApplicationController
                                    :password,
                                    :birthday,
                                    :nationality,
-                                   :occupation)
+                                   :occupation,
+                                   :avatar)
     end
 end
