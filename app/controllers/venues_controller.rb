@@ -9,9 +9,9 @@ class VenuesController < ApplicationController
 
   private
 
-  def sort_items(results, filter)
-    return GiltGenerator.sort_shoes(results) if filter[:shoes] && !results.nil?
-    return GiltGenerator.sort_accessories(results) if filter[:accessories] && !results.nil?
+  def sort_items(results, params)
+    return GiltGenerator.sort_shoes(results) if params[:shoes] && !results.nil?
+    return GiltGenerator.sort_accessories(results) if params[:accessories] && !results.nil?
     return GiltGenerator.sort_apparel(results) if !results.nil?
   end
 end
