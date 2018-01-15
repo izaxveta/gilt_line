@@ -1,48 +1,78 @@
- <div class='venue'>
-  <div class='name'><%= @venue.name %></div>
-  <div class='categories'>
-    <% @venue.categories.each do |category| %>
-      <div class='category'><%= category %></div>
-    <% end %>
-  </div>
-  <div class='price'><%= @venue.price %></div>
-  <div class='rating'><%= @venue.rating %></div>
-  <div class='review_count'><%= @venue.review_count %></div>
-  <div class='phone'><%= @venue.phone %></div>
-  <div class='location'>
-    <% @venue.location.each do |line| %>
-      <%= line %>
-    <% end %>
-  </div>
-  <div class='venue-image'><%= image_tag @venue.image_url %></div>
-</div>
-
-<%= link_to "APPAREL", venue_path({venue: @venue.as_json, apparel: true}) %>
-<%= link_to "SHOES", venue_path({venue: @venue.as_json, shoes: true}) %>
-<%= link_to "ACCESSORIES", venue_path({venue: @venue.as_json, accessories: true}) %>
-
-<% if !@items.nil? %>
-  <% @items.each do |item| %>
-    <div class='item-container'>
-      <% if item.limited_inventory? %>
-        <span class='notice'>Limited!</span>
-      <% end %>
-      <div class='image'>
-        <div class='item-image'><%= image_tag(item.image_urls.first, alt: "#{item.label}") %></div>
-        <div class='heart'></div>
-      </div>
-      <div class='item-info'>
-        <div class='style'>
-          <div class='label-name'><%= item.label %></div>
-          <div class='name'><%= item.name %></div>
-        </div>
-        <div class='price'>
-          <div class='msrp'><%= item.msrp_price %></div>
-          <div class='sale'><%= item.sale_price %></div>
+ <html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display:400" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/styles/dashboard.scss" title="text/scss" />
+  </head>
+  <body>
+    <div class='venue-container'>
+      <div class='venue'>
+        <div class='venue-image'><%= image_tag @venue.image_url %></div>
+        <div class='venue-info'>
+          <div class='general-info'>
+            <div class='venue-name'><%= @venue.name %></div>
+            <div class='venue-categories'><%= @venue.display_categories %></div>
+            <div class='venue-price'><%= @venue.price %></div>
+            <div class='venue-popularity'>
+              Rating:<div class='venue-rating'> <%= @venue.rating %>/5</div>
+              <div class='venue-review_count'>(<%= @venue.review_count %> Reviews)</div>
+            </div>
+          </div>
+          <div class='contact-info'>
+            Phone:
+            <div class='venue-phone'><%= @venue.phone %></div>
+            <div class='venue-location'>
+              Address:
+              <% @venue.location.each do |line| %>
+                <div><%= line %></div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  <% end %>
-<% else %>
-  <p>There are currently no matches for this venue, perhaps try again later.</p>
-<% end %>
+
+    <div class='option-bar'>
+      <div class='option-line-divider'></div>
+      <div class='venue-button' id='venue-options'>
+        <%= link_to "APPAREL", venue_path({venue: @venue.as_json, apparel: true}), class: 'option' %>
+        <%= link_to "SHOES", venue_path({venue: @venue.as_json, shoes: true}), class: 'option' %>
+        <%= link_to "ACCESSORIES", venue_path({venue: @venue.as_json, accessories: true}), class: 'option' %>
+      </div>
+    </div>
+
+    <% if !@items.nil? %>
+      <div class='listing'>
+        <% until @items.empty? %>
+          <div class='item-row'>
+            <% @items.slice!(0..2).each do |item| %>
+              <div class='item-container'>
+                <div class='item-details'>
+                  <div class='image'>
+                    <div class='item-image'><%= image_tag(item.image_urls.first, alt: "#{item.label}") %></div>
+                    <div class='heart'></div>
+                  </div>
+                  <div class='item-info'>
+                    <div class='style'>
+                      <div class='label-name'><%= item.label %></div>
+                      <div class='name'><%= item.name %></div>
+                    </div>
+                    <div class='price'>
+                      <% if item.on_sale? %>
+                        <div class='msrp'>$<%= item.msrp_price %></div>
+                        <div class='sale'>$<%= item.sale_price %></div>
+                      <% else %>
+                        <div class='regular'>$<%= item.msrp_price %></div>
+                      <% end %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <p>There are currently no matches for this venue, perhaps try again later.</p>
+    <% end %>
+  </body>
+</html>

@@ -1,0 +1,163 @@
+.venue-container {
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+  padding-top    : 20px;
+}
+
+.venue {
+  display    : flex;
+  align-items: center;
+  margin-top : 20px;
+  margin-bottom: 20px;
+}
+
+.venue-image {
+  width        : 290px;
+  height       : 290px;
+  position     : relative;
+  overflow     : hidden;
+  border-radius: 50%;
+}
+
+.venue-image img {
+  height    : auto;
+  min-height: 300px;
+  width     : 300px;
+  margin    : 0 auto;
+}
+
+.venue-info {
+  font-family    : 'Josefin Sans', sans-serif;
+  font-size      : 20px;
+  display        : flex;
+  flex-direction : column;
+  justify-content: space-between;
+  height         : 100%;
+  padding-left   : 60px;
+}
+
+.venue-name {
+  font-family: 'Playfair Display', serif;
+  font-size  : 40px;
+}
+
+.venue-location {
+  display       : flex;
+  flex-direction: column;
+}
+
+.venue-popularity {
+  display: flex;
+}
+
+.venue-rating {
+  font-weight: bold;
+}
+
+.venue-review_count {
+  font-style: italic;
+}
+
+.listing {
+  max-width: 100%;
+}
+
+.item-row {
+  display        : flex;
+  justify-content: space-around;
+  padding        : 20px;
+}
+
+.item-container {
+  font-family : 'Josefin Sans', sans-serif;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  margin-right: 10px;
+  margin-left : 10px;
+}
+
+.item-details {
+  margin: 20px;
+
+  .label-name{
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+.item-image img {
+  width : 350px;
+  height: auto;
+}
+
+.limited-notice {
+  color: goldenrod;
+}
+
+.price {
+  width          : 35%;
+  justify-content: space-between;
+  align-items    : right;
+  display        : flex;
+  align-items    : right;
+  font-style     : italic;
+
+  .msrp {
+    color          : black;
+    text-decoration: line-through;
+  }
+
+  .sale {
+    font-weight: bold;
+    font-size  : 20px;
+    color      : goldenrod;
+  }
+}
+  .regular {
+    font-size: 20px;
+    color    : black;
+  }
+
+
+.style {
+
+  .label-name {
+    font-weight: bold;
+    font-size  : 20px;
+  }
+}
+
+.venue-button {
+  display: flex;
+  align-items: left;
+  justify-content: space-around;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+#venue-options {
+  flex-direction: row;
+  margin-top: 0;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  width: 80%;
+}
+
+.venue-button a {
+  font-family    : 'Josefin Sans', sans-serif;
+  background-color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  height: 30px;
+  width: 200px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 4px;
+}
