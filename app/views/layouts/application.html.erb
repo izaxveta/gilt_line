@@ -15,20 +15,23 @@
       </div>
       <div class='navigation-buttons'>
         <% if current_user %>
-          <%= link_to 'PROFILE', profile_path %>
-          <%= link_to 'DASHBOARD', dashboard_path %>
-          <% if current_admin? %>
-            <%= link_to 'SETTINGS', settings_path %>
+          <% if current_user.default? %>
+            <%= link_to 'D A S H B O A R D', profile_path %>
+            <%= link_to 'P R O F I L E', dashboard_path %>
           <% end %>
-          <%= link_to 'SIGN OUT', logout_path, method: :delete %>
+          <% if current_admin? %>
+            <%= link_to 'D A S H B O A R D', admin_dashboard_path %>
+            <%= link_to 'P R O F I L E', dashboard_path %>
+            <%= link_to 'S E T T I N G S', settings_path %>
+          <% end %>
+          <%= link_to 'S I G N  O U T', logout_path, method: :delete %>
           <div class='search-bar'>
             <%= form_tag search_index_path, method: :get do %>
               <%= text_field_tag :q, 'Search', class: 'search-field' %>
               <%= submit_tag 'GO', class: 'search-button' %>
             <% end %>
           </div>
-          <% end %>
-        </div>
+        <% end %>
       </div>
     </nav>
 
