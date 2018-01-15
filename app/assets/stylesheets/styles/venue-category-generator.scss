@@ -1,0 +1,40 @@
+.venue-category-generator {
+  padding: 40px;
+}
+
+.venue-category-generator textarea {
+  color: goldenrod;
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: italic;
+  width: 50%;
+  height: 300px;
+  display: flex;
+  font-size: 15px;
+  padding: 10px;
+}
+
+.generate-button input {
+  font-family: 'Josefin Sans', sans-serif;
+  color: black;
+  font-size: 15px;
+  padding-left: 10px;
+  display: flex;
+  border: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 30px;
+  height: 30px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+}
+
+.generate-button {
+  padding-top: 10px;
+}
+
+.generate-button input:hover {
+  background-color: black;
+  color: white;
+}

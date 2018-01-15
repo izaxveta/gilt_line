@@ -1,7 +1,8 @@
 
 <div class='venue-category-generator'>
+  <div class='generator-how-to'></div>
   <%= form_tag venue_categories_path, method: :post do %>
-    <%= text_area_tag :generator_form, 'VenueCategories' %>
-    <%= submit_tag 'GENERATE' %>
+    <%= text_area_tag :generator_form, placeholder="Insert YELP Category JSON data here...\n\nThis data can be found at: 'https://www.yelp.com/developers/documentation/v3/all_category_list/categories.json'" %>
+    <div class='generate-button'><%= submit_tag 'GENERATE' %></div>
   <% end %>
 </div>
