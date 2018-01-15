@@ -33,6 +33,10 @@ class Item
     @json_url         = data[:product]
   end
 
+  def on_sale?
+    return true if msrp_price != sale_price
+  end
+
   def total_units_for_sale(skus)
     skus.map { |sku| sku[:units_for_sale] }.sum
   end
