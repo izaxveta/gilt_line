@@ -14,8 +14,8 @@ class Venue
     @price        = data[:price]
     @rating       = data[:rating]
     @review_count = data[:review_count]
-    @phone        = data[:phone]
-    @location     = display_location(data[:location])
+    @phone        = display_phone(data[:phone])
+    @location     = get_display_location(data[:location])
     @image_url    = data[:image_url]
   end
 
@@ -33,12 +33,16 @@ class Venue
     categories.join(', ')
   end
 
-  def render_location
+  def display_phone(num)
+    "#{num[0..1]} #{num[2..4]} #{num[5..7]} #{num[8..-1]}"
+  end
+
+  def display_location
     location.join(' ')
   end
 
   private
-    def display_location(location)
+    def get_display_location(location)
       return location[:display_address] if location.is_a?(Hash)
       return location if location.is_a?(Array)
     end
