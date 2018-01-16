@@ -23,6 +23,20 @@
   padding-left   : 30px;
 }
 
+.venue-name-category {
+  .listing-name {
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .listing-categories {
+    font-size: 20px;
+  }
+}
+
+.listing-location {
+  font-size: 20px;
+}
+
 .listing-venue-image {
   width        : 125px;
   height       : 125px;
@@ -65,5 +79,17 @@
   .popularity {
     display       : flex;
     flex-direction: row;
+
+    .listing-rating {
+      font-weight: bold;
+    }
+
+    .listing-review_count {
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-style: italic;
+    }
   }
 }
