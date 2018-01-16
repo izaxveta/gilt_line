@@ -1,6 +1,6 @@
 class VenueService
   def get_venues_by_location(filter)
-    get_json("search?term=restaruants&location=10036&price=3,4&location=#{filter}")
+    get_json("search?term=restaurants&price=3,4&location=#{filter}")
   end
 
   private
