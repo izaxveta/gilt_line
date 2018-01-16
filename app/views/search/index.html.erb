@@ -1,7 +1,7 @@
 <div class='search-listings'>
   <% @venues.each do |venue| %>
     <div class='venue-container'>
-        <%= link_to venue_path(venue: venue.as_json) do %>
+      <%= link_to venue_path(venue: venue.as_json) do %>
       <div class='venue-listing'>
           <div class='listing-venue-image'><%= image_tag venue.image_url %></div>
           <div class='venue-listing-info'>
@@ -10,7 +10,7 @@
                 <div class='listing-name'><%= venue.name %></div>
                 <div class='listing-categories'><%= venue.display_categories %></div>
               </div>
-              <div class='listing-location'><%= venue.render_location %></div>
+              <div class='listing-location'><%= venue.display_location %></div>
             </div>
             <div class='grouped-info-b'>
               <div class='venue-price-rating'>
