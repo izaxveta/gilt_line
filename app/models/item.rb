@@ -1,5 +1,6 @@
 class Item
-  attr_reader :data,
+  attr_reader :id,
+              :data,
               :name,
               :label,
               :description,
@@ -16,6 +17,7 @@ class Item
               :json_url
 
   def initialize(data)
+    @id               = data[:id]
     @data             = data
     @name             = data[:name]
     @label            = data[:brand]
