@@ -10,12 +10,12 @@ RSpec.feature 'As an authenticated user' do
           rebecca_minkoff = create(:label, name: 'Rebecca Minkoff')
           bcbgmaxazria    = create(:label, name: 'BCBGMAXAZRIA')
 
-          sushi_bar  = create(:venue_category, name: 'Sushi Bars')
+          wine_bar  = create(:venue_category, name: 'Wine Bars')
           seafood    = create(:venue_category, name: 'Seafood')
           steakhouse = create(:venue_category, name: 'Steakhouses')
 
-          sushi_bar.labels << rebecca_minkoff
-          sushi_bar.labels << bcbgmaxazria
+          wine_bar.labels << rebecca_minkoff
+          wine_bar.labels << bcbgmaxazria
 
           allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
