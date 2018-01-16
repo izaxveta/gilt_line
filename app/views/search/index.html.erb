@@ -1,38 +1,30 @@
- <html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:100|Playfair+Display:400" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheets/styles/search.scss" title="text/scss" />
-  </head>
-  <body>
-    <div class='search-listings'>
-      <% @venues.each do |venue| %>
-        <div class='venue-container'>
-            <%= link_to venue_path(venue: venue.as_json) do %>
-          <div class='venue-listing'>
-              <div class='listing-venue-image'><%= image_tag venue.image_url %></div>
-              <div class='venue-listing-info'>
-                <div class='grouped-info-a'>
-                  <div class='venue-name-category'>
-                    <div class='listing-name'><%= venue.name %></div>
-                    <div class='listing-categories'><%= venue.display_categories %></div>
-                  </div>
-                  <div class='listing-location'><%= venue.render_location %></div>
-                </div>
-                <div class='grouped-info-b'>
-                  <div class='venue-price-rating'>
-                    <div class='listing-price'><%= venue.price %></div>
-                    <div class='popularity'>
-                      <div class='listing-rating'><%= venue.rating %>/5</div>
-                      <div class='listing-review_count'>(<%= venue.review_count %> Ratings)</div>
-                    </div>
-                  </div>
-                  <div class='listing-phone'><%= venue.phone %></div>
+<div class='search-listings'>
+  <% @venues.each do |venue| %>
+    <div class='venue-container'>
+        <%= link_to venue_path(venue: venue.as_json) do %>
+      <div class='venue-listing'>
+          <div class='listing-venue-image'><%= image_tag venue.image_url %></div>
+          <div class='venue-listing-info'>
+            <div class='grouped-info-a'>
+              <div class='venue-name-category'>
+                <div class='listing-name'><%= venue.name %></div>
+                <div class='listing-categories'><%= venue.display_categories %></div>
+              </div>
+              <div class='listing-location'><%= venue.render_location %></div>
+            </div>
+            <div class='grouped-info-b'>
+              <div class='venue-price-rating'>
+                <div class='listing-price'><%= venue.price %></div>
+                <div class='popularity'>
+                  <div class='listing-rating'><%= venue.rating %>/5</div>
+                  <div class='listing-review_count'>(<%= venue.review_count %> Ratings)</div>
                 </div>
               </div>
+              <div class='listing-phone'><%= venue.phone %></div>
+            </div>
           </div>
-            <% end %>
-        </div>
-      <% end %>
+      </div>
+        <% end %>
     </div>
-  </body>
-</html>
+  <% end %>
+</div>
