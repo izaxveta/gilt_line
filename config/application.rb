@@ -34,7 +34,7 @@ module GiltLine
     config.action_dispatch.default_headers = {
       'Access-Control-Allow-Origin': 'https://jet-for-gilt.herokuapp.com, https://localhost:3000',
       'Access-Control-Requested-Method': %w{GET POST PUT PATCH DELETE UPDATE OPTIONS}.join(","),
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
       'Accept': 'application/json'
     }
   end
