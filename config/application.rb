@@ -27,15 +27,5 @@ module GiltLine
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
-    config.session_store :cookie_store, key: '_interslice_session'
-    config.middleware.use ActionDispatch::Cookies #Rewuired for all session management
-    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
-    config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin': 'https://jet-for-gilt.herokuapp.com, https://localhost:3000',
-      'Access-Control-Requested-Method': %w{GET POST PUT PATCH DELETE UPDATE OPTIONS}.join(","),
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    }
   end
 end
