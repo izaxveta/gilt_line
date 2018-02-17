@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  post '/api/v1/users', to: 'api/v1/users#create'
+
+
   root 'welcome#index'
 
   get '/venue', to: 'venues#show', as: 'venue'
