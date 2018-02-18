@@ -29,11 +29,12 @@ module GiltLine
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.middleware.use Rack::Cors do
+    config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins 'localhost:3000' 'http://izaxveta.github.io/jet-for-gilt/'
-        resource '/api/v1/users', :headers => :any, :methods => [:get, :put, :patch, :post, :delete]
+        origins '*'
+        resource '*', :headers => :any, :methods => [:get, :post, :delete, :put, :patch, :options]
       end
     end
+
   end
 end
