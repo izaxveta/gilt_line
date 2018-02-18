@@ -10,7 +10,7 @@ require "action_mailer/railtie"
 require "action_view/railtie"
 require "action_cable/engine"
 require "sprockets/railtie"
-
+require "rack/cors"
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
@@ -29,9 +29,11 @@ module GiltLine
     # Don't generate system test files.
     config.generators.system_tests = nil
 
-    config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => ['localhost:3000', 'http://izaxveta.github.io/jet-for-gilt/'],
-      'Access-Control-Request-Method' => %w{GET PUT PATCH POST DELETE OPTIONS}.join(",")
-    }
+    config.middleware.use Rack::Cors do
+      allow do
+        origins 'localhost:3000' 'http://izaxveta.github.io/jet-for-gilt/'
+        resource '/api/v1/users', :headers => :any, :methods => [:get, :put, :patch, :post, :delete]
+      end
+    end
   end
 end
