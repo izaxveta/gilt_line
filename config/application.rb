@@ -30,7 +30,7 @@ module GiltLine
     config.generators.system_tests = nil
 
     config.action_dispatch.default_headers = {
-      'Access-Control-Allow-Origin' => 'localhost:3000', 'http://izaxveta.github.io/jet-for-gilt/'
+      'Access-Control-Allow-Origin' => ['localhost:3000', 'http://izaxveta.github.io/jet-for-gilt/'],
       'Access-Control-Request-Method' => %w{GET PUT PATCH POST DELETE OPTIONS}.join(",")
     }
   end
