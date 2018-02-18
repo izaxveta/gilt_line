@@ -31,7 +31,7 @@ module GiltLine
 
     config.middleware.use Rack::Cors do
       allow do
-        origins 'localhost:3000' 'https://izaxveta.github.io/jet-for-gilt/'
+        origins 'http://localhost:3000' 'http://izaxveta.github.io/jet-for-gilt/'
         resource '/users', :headers => :any, :methods => [:get, :put, :patch, :post, :delete]
       end
     end
