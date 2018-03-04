@@ -22,4 +22,9 @@ class Api::V1::LabelsController < Api::V1::ApplicationController
     end
   end
 
+  private
+
+    def label_params
+      params.require(:label).permit(:name)
+    end
 end
