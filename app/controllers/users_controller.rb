@@ -45,6 +45,7 @@ class UsersController < ApplicationController
                                    :birthday,
                                    :nationality,
                                    :occupation,
-                                   :avatar)
+                                   :avatar,
+                                   :moniker)
     end
 end
