@@ -2,7 +2,11 @@ Rails.application.routes.draw do
 
   post '/api/v1/authenticate', to: 'api/v1/authentication#authenticate'
 
+  # USERS API
+  get '/api/v1/users', to: 'api/v1/users#index'
+  get '/api/v1/users/:moniker', to: 'api/v1/users#show'
   post '/api/v1/users', to: 'api/v1/users#create'
+  put '/api/v1/users/:moniker', to: 'api/v1/users#update'
 
   # LABELS API
   get '/api/v1/labels', to: 'api/v1/labels#index'
