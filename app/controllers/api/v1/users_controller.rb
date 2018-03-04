@@ -1,4 +1,9 @@
 class Api::V1::UsersController < Api::V1::ApplicationController
+
+  def index
+    render status: 200, json: User.all
+  end
+
   def show
     user = User.find_by(moniker: params[:moniker])
     render status: 200, json: {
