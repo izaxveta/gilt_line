@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   post '/api/v1/authenticate', to: 'api/v1/authentication#authenticate'
 
   post '/api/v1/users', to: 'api/v1/users#create'
+  # VENUE CATEGORIES API
+  get '/api/v1/venue-categories', to: 'api/v1/venue_categories#index'
+  get '/api/v1/venue-categories/:name', to: 'api/v1/venue_categories#show'
+
 
   root 'welcome#index'
 
