@@ -2,8 +2,9 @@ class User < ApplicationRecord
   validates :first_name,
             :last_name,
             :email,
+            :moniker,
             presence: true
-  validates_uniqueness_of :email
+  validates_uniqueness_of :email, :moniker
   has_secure_password
 
   has_many :user_labels
