@@ -8,4 +8,18 @@ class Api::V1::LabelsController < Api::V1::ApplicationController
     render status: 200, json: label
   end
 
+  def create
+    label = Label.new(label_params)
+    if label.save
+      render status: 201, json: {
+        message: 'Label successfully created',
+        label: label
+      }
+    else
+      render status: 400, json: {
+        message: 'Invalid request.'
+      }
+    end
+  end
+
 end
