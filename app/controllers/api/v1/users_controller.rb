@@ -26,6 +26,18 @@ class Api::V1::UsersController < Api::V1::ApplicationController
     end
   end
 
+  def update
+    user = User.find_by(moniker: params[:moniker])
+    if user.update(user_params)
+      render status: 202, json: {
+        message: "Successfully updated #{user.full_name}",
+        user: user
+      }
+    else
+      render status: 404
+    end
+  end
+
   private
 
     def user_params
