@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   get '/api/v1/venue-categories', to: 'api/v1/venue_categories#index'
   get '/api/v1/venue-categories/:name', to: 'api/v1/venue_categories#show'
 
+  #VENUES API
+  get '/api/v1/search', to: 'api/v1/search#index'
+
 
   root 'welcome#index'
 
