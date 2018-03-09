@@ -35,6 +35,11 @@ class Item
     @json_url         = data[:product]
   end
 
+  def item_colors
+    return data[:skus][0][:attributes][0][:value] if data[:skus][0][:attributes]
+    return '' if !data[:skus][0][:attributes]
+  end
+
   def on_sale?
     return true if msrp_price != sale_price
   end
