@@ -30,7 +30,7 @@ class Item
     @units_for_sale   = total_units_for_sale(data[:skus])
     @msrp_price       = data[:skus][0][:msrp_price]
     @sale_price       = data[:skus][0][:sale_price]
-    @color            = data[:skus][0][:attributes][0][:value].titleize
+    @color            = item_colors
     @categories       = data[:categories]
     @json_url         = data[:product]
   end
