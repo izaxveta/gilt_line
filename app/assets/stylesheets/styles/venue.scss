@@ -18,14 +18,15 @@
   position     : relative;
   overflow     : hidden;
   border-radius: 50%;
+
+  img {
+    height    : auto;
+    min-height: 300px;
+    width     : 300px;
+    margin    : 0 auto;
+  }
 }
 
-.venue-image img {
-  height    : auto;
-  min-height: 300px;
-  width     : 300px;
-  margin    : 0 auto;
-}
 
 .venue-info {
   font-family    : 'Josefin Sans', sans-serif;
