@@ -20,6 +20,9 @@ Rails.application.routes.draw do
   #VENUES API
   get '/api/v1/search', to: 'api/v1/search#index'
 
+  #FASHION ITEMS API
+  get '/api/v1/items', to: 'api/v1/items#index'
+
 
   root 'welcome#index'
 
