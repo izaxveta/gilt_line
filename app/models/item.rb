@@ -24,7 +24,7 @@ class Item
     @description      = format_description
     @material         = format_material
     @origin           = format_origin
-    @product_url      = data[:url]
+    @gilt_url         = data[:url]
     @image_urls       = filter_urls(data[:image_urls][:"420x560"])
     @inventory_status = data[:skus][0][:inventory_status].titleize
     @units_for_sale   = total_units_for_sale(data[:skus])
